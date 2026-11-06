@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Tech Solutions | Web Development & IT Services for US and Global Clients</title>
+    <meta name="description" content="Mocha Tech Solutions builds fast websites, online stores and web apps for US and international businesses. Fixed quotes in USD or KES. Free 30-minute consultation.">
+    <meta name="theme-color" content="#5E17EB">
+    <link rel="canonical" href="https://mocha-it-services.netlify.app/">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.svg">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mocha Tech Solutions">
+    <meta property="og:title" content="Mocha Tech Solutions | Innovation • Technology • Digital Solutions">
+    <meta property="og:description" content="Web & software development, IT consulting, creative design, CV and portal services. Quotes in KES and USD.">
+    <meta property="og:url" content="https://mocha-it-services.netlify.app/">
+    <meta property="og:image" content="https://mocha-it-services.netlify.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Local business structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Mocha Tech Solutions",
+      "url": "https://mocha-it-services.netlify.app/",
+      "email": "mochatechsites@gmail.com",
+      "telephone": "+254740218750",
+      "sameAs": ["https://www.facebook.com/profile.php?id=100076974970531"],
+      "areaServed": ["KE", "Worldwide"],
+      "description": "Web and software development, IT consulting, creative design, CV writing, portal services and student IT project support.",
+      "priceRange": "KES 30 - KES 35,000+"
+    }
+    </script>
+
+    <!-- Apply saved theme before paint -->
+    <script>
+        try {
+            var t = localStorage.getItem('theme');
+            if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <script src="firebase-config.js"></script>
+    <script src="config.js"></script>
+    <script src="core.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 relative min-h-screen selection:bg-violet-600 selection:text-white pt-[73px]">
+
+    <a href="#services" class="skip-link">Skip to content</a>
+
+    <!-- TOP BANNER (Dynamic from Admin) -->
+    <div id="topBanner" class="hidden bg-gradient-to-r from-violet-600 to-electricBlue text-slate-950 px-4 py-2 text-center text-xs sm:text-sm font-bold flex items-center justify-center gap-2 z-50">
+        <span id="bannerText"></span>
+        <a id="bannerLink" href="#" class="underline hover:text-white hidden"></a>
+    </div>
+
+    <!-- FIXED TOP NAVIGATION -->
+    <nav id="main-nav" aria-label="Main navigation" class="fixed top-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md z-50 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-lg sm:text-xl font-extrabold tracking-tight text-violet-600 dark:text-electricBlue">MOCHA<span class="text-slate-800 dark:text-white">TECH</span></a>
+
+            <div class="hidden md:flex items-center space-x-6 font-medium text-sm">
+                <a href="#welcome" class="hover:text-violet-600 transition text-pink-600 dark:text-pink-400 font-bold">🌸 Welcome</a>
+                <a href="#services" class="hover:text-violet-600 dark:hover:text-electricBlue transition">Departments</a>
+                <a id="navPostsLink" href="#postsSection" class="hidden hover:text-violet-600 dark:hover:text-electricBlue transition">News & Offers</a>
+                <a href="#process" class="hover:text-violet-600 dark:hover:text-electricBlue transition">How It Works</a>
+                <a href="#packages" class="hover:text-violet-600 dark:hover:text-electricBlue transition">Packages</a>
+                <a href="#showcase" class="hover:text-violet-600 dark:hover:text-electricBlue transition">What We Build</a>
+                <a href="#estimator" class="hover:text-violet-600 dark:hover:text-electricBlue transition">Estimate</a>
+                <a href="#faq" class="hover:text-violet-600 dark:hover:text-electricBlue transition">FAQ</a>
+                <a href="online_cyber.html" class="text-violet-600 dark:text-electricBlue font-bold hover:underline">💻 Online Cyber Desk</a>
+                <a href="#contact" class="hover:text-violet-600 dark:hover:text-electricBlue transition">Get Quote</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" type="button" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-yellow-400 transition" title="Toggle light/dark mode" aria-label="Toggle light or dark mode">
+                    <i class="fa-solid fa-moon dark:hidden" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline" aria-hidden="true"></i>
+                </button>
+                <a href="https://wa.me/254740218750?text=Hello%20Mocha%20Tech%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="hidden sm:flex bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-semibold transition items-center gap-2 shadow">
+                    <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Live Support
+                </a>
+                <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-5 space-y-4 font-medium shadow-2xl">
+            <a href="#welcome" class="mobile-link block text-pink-600 dark:text-pink-400 font-bold py-1">🌸 Welcome Page</a>
+            <a href="#services" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">Departments</a>
+            <a id="mobilePostsLink" href="#postsSection" class="hidden mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">News & Offers</a>
+            <a href="#process" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">How It Works</a>
+            <a href="#packages" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">Solutions & Packages</a>
+            <a href="#showcase" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">What We Build</a>
+            <a href="#estimator" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">Get an Estimate</a>
+            <a href="#faq" class="mobile-link block hover:text-violet-600 py-1 border-b border-slate-100 dark:border-slate-800">FAQ</a>
+            <a href="online_cyber.html" class="block text-violet-600 dark:text-electricBlue font-bold py-1 border-b border-slate-100 dark:border-slate-800">💻 Online Cyber Desk (CVs & Portals)</a>
+            <a href="#contact" class="mobile-link block hover:text-violet-600 py-1">Get Free Quote</a>
+            <a href="https://wa.me/254740218750?text=Hello%20Mocha%20Tech%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-2.5 rounded-lg mt-2">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Live Support WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <main>
+    <!-- WELCOME SPLASH -->
+    <section id="welcome" class="scroll-mt-24 relative min-h-[90vh] flex flex-col justify-between bg-gradient-to-br from-[#0B132B] via-slate-900 to-[#1C103F] text-white overflow-hidden py-12 px-4 sm:px-6 lg:px-8 border-b border-violet-500/20">
+        <canvas id="flowerCanvas" aria-hidden="true"></canvas>
+
+        <div class="max-w-4xl mx-auto text-center z-20 my-auto py-8 space-y-8 relative">
+            <div class="inline-flex items-center gap-2 bg-violet-500/20 text-violet-300 border border-violet-500/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                <span class="animate-bounce" aria-hidden="true">🌺</span> Welcome to Mocha Tech Solutions
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue via-violet-400 to-pink-400">Digital Excellence</span> <br>
+                Built for Kenya, Ready for the World
+            </h1>
+
+            <div class="mt-flagrow">🇺🇸 Serving US businesses · Fixed USD quotes · Free 30-min consultation</div>
+
+            <div class="bg-white/10 backdrop-blur-md border border-white/15 p-6 sm:p-8 rounded-2xl shadow-2xl relative max-w-2xl mx-auto overflow-hidden">
+                <div class="text-xs uppercase tracking-widest text-violet-300 font-bold mb-2 flex items-center justify-center gap-2">
+                    <i class="fas fa-bullhorn text-electricBlue" aria-hidden="true"></i> Enterprise Services & Offers
+                </div>
+
+                <div class="ad-slide active space-y-2">
+                    <h2 class="text-lg sm:text-xl font-bold text-white">🚀 Custom Web & Software Development</h2>
+                    <p class="text-sm text-slate-300">Scalable full-stack apps, M-Pesa & Bank integrations, and robust web platforms built for real businesses.</p>
+                    <span class="inline-block mt-2 text-xs font-semibold bg-violet-500/40 text-violet-200 px-3 py-1 rounded-full border border-violet-400/30">KES & USD Quotations Available</span>
+                </div>
+
+                <div class="ad-slide space-y-2">
+                    <h2 class="text-lg sm:text-xl font-bold text-white">💻 Online Cyber Desk & CV Writing</h2>
+                    <p class="text-sm text-slate-300">Professional CV editing, cover letters, eCitizen and KRA portal help, and fast document processing.</p>
+                    <a href="online_cyber.html" class="inline-block mt-2 text-xs font-semibold bg-emerald-500/40 text-emerald-200 px-3 py-1 rounded-full border border-emerald-400/30 hover:underline">Visit Cyber Desk &rarr;</a>
+                </div>
+
+                <div class="ad-slide space-y-2">
+                    <h2 class="text-lg sm:text-xl font-bold text-white">🎨 Creative Design & IT Consulting</h2>
+                    <p class="text-sm text-slate-300">Branding, UI/UX assets, technical consultations, and student project mentorship.</p>
+                    <span class="inline-block mt-2 text-xs font-semibold bg-pink-500/40 text-pink-200 px-3 py-1 rounded-full border border-pink-400/30">Free Initial Consultation</span>
+                </div>
+
+                <div class="flex justify-center gap-2 mt-4" role="tablist" aria-label="Offers">
+                    <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all" aria-label="Show offer 1"></button>
+                    <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all" aria-label="Show offer 2"></button>
+                    <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all" aria-label="Show offer 3"></button>
+                </div>
+            </div>
+
+            <div class="mt-hero-cta">
+                <a href="#services" class="cta-pulse inline-flex items-center gap-3 bg-gradient-to-r from-violet-600 to-electricBlue hover:from-violet-700 hover:to-cyan-500 text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl shadow-xl transition transform hover:scale-105">
+                    Explore Full Platform <i class="fas fa-arrow-down text-lg" aria-hidden="true"></i>
+                </a>
+                <a href="#contact" class="mt-ghost-btn"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get a Free Quote</a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-2 md:grid-cols-4 gap-4 z-20 text-center text-xs sm:text-sm text-slate-300">
+            <div class="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">⚡ Fast Response Time</div>
+            <div class="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">🇺🇸 USD Quotes · US-Friendly</div>
+            <div class="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">🔒 Secure & Confidential</div>
+            <div class="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">📊 Transparent Pricing</div>
+        </div>
+    </section>
+
+    <!-- NEWS & OFFERS SECTION (Dynamic) -->
+    <section id="postsSection" class="hidden scroll-mt-24 py-16 bg-violet-950/20 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Updates & Announcements</span>
+                <h2 class="text-3xl font-extrabold mt-2">News & Special Offers</h2>
+            </div>
+            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- SERVICE DEPARTMENTS -->
+    <section id="services" class="scroll-mt-24 py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold">Our Service Departments</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-2">Specialized technology solutions structured for maximum impact.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-code" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">Web & Software Development</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Full-stack web applications, dynamic business portals, database architecture, and responsive e-commerce stores.</p>
+                <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20need%20a%20quote%20for%20Web%20%26%20Software%20Development." target="_blank" rel="noopener" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask about this</a>
+            </article>
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">IT Consulting & Security</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Networking, IP subnetting, hardware diagnostic audits, vulnerability assessments, and digital safety consultations.</p>
+                <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20need%20IT%20Consulting%20%26%20Security%20help." target="_blank" rel="noopener" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask about this</a>
+            </article>
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-palette" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">Creative Design & Branding</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Corporate identity, professional logos, UI/UX assets, posters, and promotional media materials.</p>
+                <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20need%20Creative%20Design%20%26%20Branding." target="_blank" rel="noopener" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask about this</a>
+            </article>
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-laptop-house" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">Online Cyber & CV Services</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Professional CV writing, cover letter editing, eCitizen and KRA portal help, and fast document processing.</p>
+                <a href="online_cyber.html" class="text-violet-600 dark:text-electricBlue text-sm font-bold hover:underline">Explore Cyber Desk &rarr;</a>
+            </article>
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">Technical Support & Student Projects</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Technical guidance for undergraduate IT assignments, documentation formatting, and research proposals.</p>
+                <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20need%20help%20with%20a%20student%20IT%20project." target="_blank" rel="noopener" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask about this</a>
+            </article>
+            <article class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-md border border-slate-200 dark:border-slate-800 hover:border-violet-500 transition group flex flex-col">
+                <div class="text-violet-600 dark:text-electricBlue text-4xl mb-6 group-hover:scale-110 transition transform w-fit"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div>
+                <h3 class="font-bold text-xl mb-3">Grant & Proposal Writing</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">Professional project proposals, bid documents, technical pitches, and precise document transcription.</p>
+                <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20need%20help%20with%20a%20proposal." target="_blank" rel="noopener" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask about this</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="mt-sec">
+        <div class="mt-wrap mt-center">
+            <span class="mt-eyebrow">Why Mocha Tech</span>
+            <h2 class="mt-h2">Why US &amp; Global Businesses Choose Us</h2>
+            <p class="mt-sub">Professional results, clear communication and honest pricing, without the big-agency overhead.</p>
+            <div id="whyGrid" class="mt-grid" style="text-align:left"></div>
+            <div class="mt-stats">
+                <span class="mt-stat"><b>2 to 4 days</b> starter site delivery</span>
+                <span class="mt-stat"><b>USD or KES</b> fixed quotes</span>
+                <span class="mt-stat"><b>Free</b> first consultation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="process" class="scroll-mt-24 py-20 bg-slate-100 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl sm:text-4xl font-extrabold">How It Works</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">Four simple steps from enquiry to delivery.</p>
+            </div>
+            <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <li class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-violet-600 text-white font-black flex items-center justify-center mb-4">1</div>
+                    <h3 class="font-bold mb-1">Send your request</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Fill the form or message us on WhatsApp with what you need.</p>
+                </li>
+                <li class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-violet-600 text-white font-black flex items-center justify-center mb-4">2</div>
+                    <h3 class="font-bold mb-1">Get a clear quote</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">We confirm scope, price (KES or USD) and delivery time before starting.</p>
+                </li>
+                <li class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-violet-600 text-white font-black flex items-center justify-center mb-4">3</div>
+                    <h3 class="font-bold mb-1">We do the work</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">You get progress updates and a chance to request changes.</p>
+                </li>
+                <li class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-black flex items-center justify-center mb-4">4</div>
+                    <h3 class="font-bold mb-1">Delivered to you</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Final files arrive by email or WhatsApp. Pay via M-Pesa or Bank Transfer.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages" class="scroll-mt-24 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Solutions & Service Packages</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">Transparent pricing designed for startups, SMEs, and international clients.</p>
+                <div class="mt-cur" role="group" aria-label="Choose currency"><button type="button" class="mt-cur-btn active" data-cur="KES" aria-pressed="true">KES</button><button type="button" class="mt-cur-btn" data-cur="USD" aria-pressed="false">USD $</button></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-electricBlue bg-violet-100 dark:bg-violet-900/40 px-3 py-1 rounded-full">Starter / Landing</span>
+                        <h3 class="text-2xl font-black mt-4 mb-2">Basic Digital Presence</h3>
+                        <p class="text-sm text-slate-500 mb-6">Ideal for small businesses, personal portfolios, and local cyber services.</p>
+                        <div class="text-3xl font-black mb-6"><span data-money="pkgBasic">KES 15,000</span></div>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8">
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Single or multi-page HTML/Tailwind site</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Mobile responsive & PWA setup</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Contact form & WhatsApp integration</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Professional live deployment & custom domain setup</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20am%20interested%20in%20the%20Basic%20Digital%20Presence%20package." target="_blank" rel="noopener" class="block text-center bg-violet-600 hover:bg-violet-700 text-white font-bold py-3 rounded-xl transition shadow">Select Package</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-violet-900 to-slate-900 text-white p-8 rounded-2xl shadow-2xl border-2 border-violet-500 flex flex-col justify-between relative transform md:-translate-y-2">
+                    <span class="absolute -top-3 right-8 bg-electricBlue text-slate-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow">Most Popular</span>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-electricBlue bg-white/10 px-3 py-1 rounded-full">Full System</span>
+                        <h3 class="text-2xl font-black mt-4 mb-2">Business Web App & Database</h3>
+                        <p class="text-sm text-slate-300 mb-6">For businesses needing backend management, booking systems, or e-commerce.</p>
+                        <div class="text-3xl font-black mb-6"><span data-money="pkgBusiness" data-plus="1">KES 35,000+</span></div>
+                        <ul class="space-y-3 text-sm text-slate-200 mb-8">
+                            <li><i class="fas fa-check text-electricBlue mr-2" aria-hidden="true"></i> Full-stack PHP & MySQL backend</li>
+                            <li><i class="fas fa-check text-electricBlue mr-2" aria-hidden="true"></i> Admin dashboard & user authentication</li>
+                            <li><i class="fas fa-check text-electricBlue mr-2" aria-hidden="true"></i> M-Pesa / Bank payment integration</li>
+                            <li><i class="fas fa-check text-electricBlue mr-2" aria-hidden="true"></i> Free 1-month priority support</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20am%20interested%20in%20the%20Business%20Web%20App%20%26%20Database%20package." target="_blank" rel="noopener" class="block text-center bg-electricBlue hover:bg-cyan-400 text-slate-950 font-black py-3 rounded-xl transition shadow">Select Enterprise</a>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-electricBlue bg-violet-100 dark:bg-violet-900/40 px-3 py-1 rounded-full">Retainer Plan</span>
+                        <h3 class="text-2xl font-black mt-4 mb-2">Monthly Maintenance</h3>
+                        <p class="text-sm text-slate-500 mb-6">Continuous upkeep, security audits, and content updates.</p>
+                        <div class="text-3xl font-black mb-6"><span data-money="pkgMaint">KES 5,000</span> <span class="text-xs font-normal text-slate-400">/ mo</span></div>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 mb-8">
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Weekly security & backup checks</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Content & graphic updates</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> SEO performance monitoring</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2" aria-hidden="true"></i> Dedicated IT support hours</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/254740218750?text=Hi%20Mocha%20Tech%2C%20I%20would%20like%20the%20Monthly%20Maintenance%20plan." target="_blank" rel="noopener" class="block text-center bg-violet-600 hover:bg-violet-700 text-white font-bold py-3 rounded-xl transition shadow">Subscribe Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE BUILD (Dynamic Showcase Cards with Uploaded Screenshots) -->
+    <section id="showcase" class="scroll-mt-24 py-20 bg-slate-100 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl sm:text-4xl font-extrabold">What We Build</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">Real project types we deliver for startups and US businesses. Pick one and start in a single tap.</p>
+            </div>
+            <div id="showcaseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- WEBSITE COST ESTIMATOR -->
+    <section id="estimator" class="scroll-mt-24 py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <span class="inline-block bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-300 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-3">Free instant estimate</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold">Build Your Project Estimate</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">Tick what you need and see a starting price straight away. No sign-up.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 space-y-6">
+            <div>
+                <label for="estPages" class="block text-sm font-semibold mb-1">How many pages?</label>
+                <select id="estPages" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                    <option value="5">Up to 5 pages</option>
+                    <option value="8">6 to 8 pages</option>
+                    <option value="12">9 to 12 pages</option>
+                    <option value="20">13 to 20 pages</option>
+                </select>
+            </div>
+            <fieldset>
+                <legend class="text-sm font-semibold mb-3">Features</legend>
+                <div id="estFeatures" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm"></div>
+            </fieldset>
+            <div class="rounded-xl bg-violet-50 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-900/50 p-5 text-center">
+                <p class="text-xs text-violet-700 dark:text-violet-300 uppercase tracking-wider font-bold">Estimated starting price</p>
+                <p id="estTotal" class="text-4xl font-black text-violet-700 dark:text-electricBlue mt-1" aria-live="polite">KES 0</p>
+                <p id="estUsd" class="text-sm text-slate-500 mt-1"></p>
+                <p class="text-xs text-slate-500 mt-2">Estimate only. We confirm the final quote after a free consultation.</p>
+            </div>
+            <a id="estWhatsapp" href="https://wa.me/254740218750" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl transition shadow">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Send this estimate on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mt-sec mt-alt">
+        <div class="mt-wrap mt-center">
+            <span class="mt-eyebrow">Got questions?</span>
+            <h2 class="mt-h2">Frequently Asked Questions</h2>
+            <p class="mt-sub">Quick answers about pricing, timelines, payments and working with us from the US.</p>
+        </div>
+        <div class="mt-wrap" style="margin-top:2rem">
+            <div class="mt-faqbar"><label for="faqSearch" class="sr-only">Search questions</label><input id="faqSearch" type="search" class="mt-search" placeholder="Search questions, e.g. payment, USD, timeline…" autocomplete="off"></div>
+            <div id="faqContainer" class="mt-faqlist"></div>
+            <p id="faqEmpty" class="mt-sub" hidden style="margin-top:1rem">No matching question. <a href="#contact" style="text-decoration:underline">Ask us directly</a>.</p>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="mt-sec" style="padding-bottom:0">
+        <div class="mt-wrap">
+            <div class="mt-cta">
+                <h2>Ready to start your project?</h2>
+                <p>Tell us what you need and get a clear, fixed quote in USD or KES. The first consultation is free.</p>
+                <div class="mt-cta-row">
+                    <a href="#contact" class="mt-btn-w"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get a Free Quote</a>
+                    <a href="https://wa.me/254740218750?text=Hello%20Mocha%20Tech%2C%20I%20would%20like%20a%20free%20consultation." target="_blank" rel="noopener" class="mt-btn-g"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="scroll-mt-24 py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Connect with the Office</h2>
+                    <p class="text-sm text-slate-500">Free initial consultation • We reply as fast as we can</p>
+                </div>
+
+                <div class="space-y-4">
+                    <a data-mailto href="mailto:mochatechsites@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-slate-100 dark:border-slate-800">
+                        <div class="text-violet-600 dark:text-electricBlue text-2xl"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 block">Email Us</span>
+                            <strong data-email class="text-sm sm:text-base break-all">mochatechsites@gmail.com</strong>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/254740218750?text=Hello%20Mocha%20Tech%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-slate-100 dark:border-slate-800">
+                        <div class="text-emerald-600 text-2xl"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 block">WhatsApp Business</span>
+                            <strong class="text-sm sm:text-base"><span data-wa-text>+254 740 218 750</span> (Direct DM)</strong>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100076974970531" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-slate-100 dark:border-slate-800">
+                        <div class="text-blue-600 text-2xl"><i class="fab fa-facebook" aria-hidden="true"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 block">Official Facebook Page</span>
+                            <strong class="text-sm sm:text-base">Mocha Tech Solutions</strong>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="p-4 bg-violet-50 dark:bg-violet-950/30 rounded-xl border border-violet-200 dark:border-violet-900/50 text-xs text-violet-800 dark:text-violet-300 space-y-1">
+                    <p class="font-bold"><i class="fas fa-globe-americas mr-1" aria-hidden="true"></i> International & Local Inquiries:</p>
+                    <p>We accept project quotations in both <strong>KES</strong> and <strong>USD</strong>. Specify your currency preference in the message details.</p>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/mgaarnwn" method="POST" data-formspree class="space-y-4">
+                <h3 class="font-bold text-lg mb-2">Project Enquiry & Quotation Form</h3>
+                <input type="hidden" name="_subject" value="New project enquiry - Mocha Tech website">
+                <input type="hidden" name="_next" value="https://mocha-it-services.netlify.app/thanks.html">
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+
+                <div>
+                    <label for="fullName" class="sr-only">Full name or company</label>
+                    <input id="fullName" type="text" name="Full Name" placeholder="Full Name / Company" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="phone" class="sr-only">Phone number</label>
+                        <input id="phone" type="tel" name="Phone Number" placeholder="Phone Number" required autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                    </div>
+                    <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="category" class="sr-only">Service department</label>
+                        <select id="category" name="Service Category" required class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                            <option value="" disabled selected>Choose Service Department</option>
+                            <option value="Web & Software Dev">Web & Software Development</option>
+                            <option value="IT Consulting">IT Consulting & Security</option>
+                            <option value="Creative Design">Creative Design & Branding</option>
+                            <option value="Online Cyber & CV Services">Online Cyber & CV Services</option>
+                            <option value="Student Project Support">Student IT Project Support</option>
+                            <option value="Proposal & Grant Writing">Proposal & Grant Writing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="budget" class="sr-only">Estimated budget</label>
+                        <select id="budget" name="Estimated Budget" class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500">
+                            <option value="" disabled selected>Estimated Budget Range</option>
+                            <option value="KES 5,000 - 15,000 / USD $40-$115">KES 5k - 15k ($40 - $115)</option>
+                            <option value="KES 15,000 - 35,000 / USD $115-$270">KES 15k - 35k ($115 - $270)</option>
+                            <option value="KES 35,000+ / USD $270+">KES 35,000+ ($270+)</option>
+                            <option value="Monthly Retainer">Monthly Maintenance Retainer</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="details" class="sr-only">Project details</label>
+                    <textarea id="details" name="Project Details" rows="3" placeholder="Describe your project requirements, goals, or currency preference (KES / USD)..." class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-violet-500"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg">Submit Project Enquiry</button>
+            </form>
+        </div>
+    </section>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254740218750?text=Hello%20Mocha%20Tech%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110 flex items-center justify-center group" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-3xl" aria-hidden="true"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-sm ml-0 group-hover:ml-2">Live Support</span>
+    </a>
+
+    <footer class="bg-slate-950 text-white py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+            <div>
+                <p class="font-extrabold text-violet-400">MOCHA<span class="text-white">TECH</span></p>
+                <p class="text-xs text-slate-400 mt-1">Innovation • Technology • Digital Solutions</p>
+            </div>
+            <div class="text-xs space-y-1">
+                <a href="#services" class="block hover:text-violet-400">Departments</a>
+                <a href="#packages" class="block hover:text-violet-400">Packages</a>
+                <a href="online_cyber.html" class="block hover:text-violet-400">Online Cyber Desk</a>
+                <a href="https://www.facebook.com/profile.php?id=100076974970531" target="_blank" rel="noopener" class="block hover:text-violet-400 text-blue-400"><i class="fab fa-facebook text-xs mr-1"></i> Facebook Page</a>
+            </div>
+            <div class="text-xs space-y-1">
+                <a data-mailto data-email href="mailto:mochatechsites@gmail.com" class="block hover:text-violet-400 break-all">mochatechsites@gmail.com</a>
+                <a href="https://wa.me/254740218750" target="_blank" rel="noopener" data-wa-text class="block hover:text-violet-400">+254 740 218 750</a>
+                <a href="admin.html" class="block text-slate-600 dark:text-slate-950 hover:text-violet-400 pt-2"><i class="fas fa-lock text-xs"></i> Admin Login</a>
+            </div>
+        </div>
+        <p class="text-center text-xs text-slate-500 mt-8">&copy; 2026 Mocha Tech Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script src="form.js" defer></script>
+    <script src="site.js" defer></script>
+    <script src="estimator.js" defer></script>
+    <script src="live.js" defer></script>
+    <script>
+        /* Petal canvas */
+        (function () {
+            var canvas = document.getElementById('flowerCanvas');
+            if (!canvas) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) { canvas.style.display = 'none'; return; }
+            var ctx = canvas.getContext('2d');
+            var running = false, visible = true;
+
+            function resize() {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            var colors = ['#f472b6', '#fb7185', '#00d2ff', '#a78bfa', '#c084fc'];
+            var count = window.innerWidth < 640 ? 20 : 36;
+
+            function Petal() { this.reset(); }
+            Petal.prototype.reset = function () {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -100;
+                this.size = Math.random() * 8 + 6;
+                this.speedY = Math.random() * 1.5 + 0.8;
+                this.speedX = Math.random() - 0.5;
+                this.rotation = Math.random() * 360;
+                this.rotSpeed = (Math.random() - 0.5) * 2;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.opacity = Math.random() * 0.7 + 0.3;
+            };
+            Petal.prototype.update = function () {
+                this.y += this.speedY;
+                this.x += Math.sin(this.y / 30) + this.speedX;
+                this.rotation += this.rotSpeed;
+                if (this.y > canvas.height + 20) this.reset();
+            };
+            Petal.prototype.draw = function () {
+                var s = this.size;
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.quadraticCurveTo(s, -s / 2, s, -s);
+                ctx.quadraticCurveTo(0, -s * 1.5, -s, -s);
+                ctx.quadraticCurveTo(-s, -s / 2, 0, 0);
+                ctx.fill();
+                ctx.restore();
+            };
+
+            var petals = [];
+            for (var i = 0; i < count; i++) petals.push(new Petal());
+
+            function frame() {
+                if (!running) return;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                petals.forEach(function (p) { p.update(); p.draw(); });
+                requestAnimationFrame(frame);
+            }
+            function sync() {
+                var should = visible && !document.hidden;
+                if (should && !running) { running = true; requestAnimationFrame(frame); }
+                else if (!should) { running = false; }
+            }
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (entries) {
+                    visible = entries[0].isIntersecting; sync();
+                }).observe(canvas.parentElement);
+            }
+            document.addEventListener('visibilitychange', sync);
+            sync();
+        })();
+
+        /* Offer carousel */
+        (function () {
+            var slides = document.querySelectorAll('.ad-slide');
+            var dots = document.querySelectorAll('.carousel-dot');
+            var current = 0, timer;
+            function show(i) {
+                slides.forEach(function (s, n) {
+                    s.classList.toggle('active', n === i);
+                    dots[n].classList.toggle('bg-violet-400', n === i);
+                    dots[n].classList.toggle('w-6', n === i);
+                    dots[n].classList.toggle('bg-white/40', n !== i);
+                    dots[n].classList.toggle('w-2.5', n !== i);
+                });
+            }
+            function start() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                timer = setInterval(function () { current = (current + 1) % slides.length; show(current); }, 5000);
+            }
+            dots.forEach(function (d, i) {
+                d.addEventListener('click', function () { clearInterval(timer); current = i; show(i); start(); });
+            });
+            show(0); start();
+        })();
+
+        /* Theme toggle */
+        (function () {
+            var btn = document.getElementById('themeToggle');
+            var root = document.documentElement;
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                var dark = root.classList.toggle('dark');
+                try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+            });
+        })();
+
+        /* Mobile menu */
+        (function () {
+            var btn = document.getElementById('mobileMenuBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn) return;
+            function setOpen(open) {
+                menu.classList.toggle('hidden', !open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.querySelector('i').className = open ? 'fas fa-xmark text-xl' : 'fas fa-bars text-xl';
+            }
+            btn.addEventListener('click', function () { setOpen(menu.classList.contains('hidden')); });
+            document.querySelectorAll('.mobile-link').forEach(function (l) {
+                l.addEventListener('click', function () { setOpen(false); });
+            });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+        })();
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').catch(function () {});
+            });
+        }
+    </script>
+</body>
+</html>
